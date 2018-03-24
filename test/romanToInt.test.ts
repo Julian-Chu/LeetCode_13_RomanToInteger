@@ -1,8 +1,19 @@
 let romanToInt = function (input: string): number {
-  let value: number = 0;
+  let total: number = 0;
   let roman: string | any = input.toUpperCase();
-  value = parseInt(romanNumerals[roman]);
-  return value;
+
+  let romanArray: string[] | any[]= roman.split('');
+  let temp:string[];
+  for(let i:number=romanArray.length -1; i >= 0;i--){
+    
+      if(romanArray[i] < romanArray[i+1]){
+          total -= parseInt(romanNumerals[romanArray[i]])
+      }else{
+        total += parseInt(romanNumerals[romanArray[i]]);
+      }
+    
+  }
+  return total;
 }
 enum romanNumerals {
   I = 1,
@@ -36,4 +47,14 @@ describe("Single Alphabet", () => {
   it("give M, return 1000", () => {
     expect(romanToInt("M")).toBe(1000);
   });
+})
+
+describe("2 alphabet",()=>{
+  it('input IV return 4',()=>{
+    expect(romanToInt("IV")).toBe(4);
+  })
+
+  it("input VI return 6",()=>{
+    expect(romanToInt("VI")).toBe(6);
+  })
 })

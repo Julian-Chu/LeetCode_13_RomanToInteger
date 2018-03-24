@@ -52,9 +52,13 @@ describe("Single Alphabet", () => {
 describe("2 alphabet",()=>{
   it('input IV return 4',()=>{
     expect(romanToInt("IV")).toBe(4);
-  })
+  });
 
   it("input VI return 6",()=>{
     expect(romanToInt("VI")).toBe(6);
-  })
+  });
+
+  it("input IX return 9",()=>{
+    expect(romanToInt("IX")).toBe(9);
+  });
 })

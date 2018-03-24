@@ -5,8 +5,10 @@ let romanToInt = function (input: string): number {
   let romanArray: string[] | any[]= roman.split('');
   let temp:string[];
   for(let i:number=romanArray.length -1; i >= 0;i--){
-    
-      if(romanArray[i] < romanArray[i+1]){
+      let lastValue:number = parseInt(romanNumerals[romanArray[i+1]]);
+      let currentValue:number = parseInt(romanNumerals[romanArray[i]]);
+
+      if( i<romanArray.length-1 && currentValue < lastValue){
           total -= parseInt(romanNumerals[romanArray[i]])
       }else{
         total += parseInt(romanNumerals[romanArray[i]]);
@@ -60,5 +62,18 @@ describe("2 alphabet",()=>{
 
   it("input IX return 9",()=>{
     expect(romanToInt("IX")).toBe(9);
+  });
+  it("input XL return 40",()=>{
+    expect(romanToInt("XL")).toBe(40);
+  });
+  it("input XC return 90",()=>{
+    expect(romanToInt("XC")).toBe(90);
+  });
+  it("input CD return 400",()=>{
+    expect(romanToInt("CD")).toBe(400);
+  });
+  
+  it("input CM return 900",()=>{
+    expect(romanToInt("CM")).toBe(900);
   });
 })

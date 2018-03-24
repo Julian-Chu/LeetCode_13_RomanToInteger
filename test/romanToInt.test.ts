@@ -12,8 +12,7 @@ let romanToInt = function (input: string): number {
           total -= parseInt(romanNumerals[romanArray[i]])
       }else{
         total += parseInt(romanNumerals[romanArray[i]]);
-      }
-    
+      }    
   }
   return total;
 }
@@ -76,4 +75,16 @@ describe("2 alphabet",()=>{
   it("input CM return 900",()=>{
     expect(romanToInt("CM")).toBe(900);
   });
+});
+
+describe("3 alphabets",()=>{
+  it("input CXC return 190",()=>{
+    expect(romanToInt("CXC")).toBe(190);
+  })
+});
+
+describe("4 alphabets",()=>{
+  it("input CXC return 190",()=>{
+    expect(romanToInt("CCXC")).toBe(290);
+  })
 })

@@ -12,6 +12,7 @@ export let romanToInt = function (input: string): number {
 
       if( i<romanArray.length-1 && currentValue < lastValue){
           total -=  parseInt(romanEnum[romanArray[i]]);
+
       }else{
         total += parseInt(romanEnum[romanArray[i]]);
       }    

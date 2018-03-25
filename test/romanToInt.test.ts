@@ -1,4 +1,4 @@
-import { romanToInt } from './../src/romanToInt';
+import { romanToInt } from './../src/romanToInt_v2';
 
 
 
